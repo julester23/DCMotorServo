@@ -6,32 +6,33 @@ An Arduino Library for controlling DC motors with rotary encoders. This library 
 Encoder Library, for measuring quadrature encoded signals from http://www.pjrc.com/teensy/td_libs_Encoder.html
 PID Library, for using encoder feedback to controll the motor from http://playground.arduino.cc/Code/PIDLibrary
 
-HOOKUP
-------
+Circuit
+-------
 I used a 754410 quad half-H controller (a pin-compatible L293D). I'm sure it would be cheaper to make out of other components, but i've never done transistor matching, and i'm afraid of burning things.
 
-### Example PINMAP
-754410
-1&9       pin_pwm_output  
-2&15      pin_dir  
-7&10      pin_dir  
-4&5&12&13 GND  
-16        5V  
-8         12V  
+### Example circuit connections
+<table>
+<tr><td>L293D or 754410 pins</td><td>Device</td><td></td></tr>
+<tr><td>1, 9</td><td>arduino</td><td>pin_pwm_output</td></tr>
+<tr><td>2, 15</td><td>arduino</td><td>pin_dir</td></tr>
+<tr><td>7, 10</td><td>arduino</td><td>pin_dir</td></tr>
+<tr><td>4, 5, 12, 13</td><td>power</td><td>GND</td></tr>
+<tr><td>16</td><td>power</td><td>5V</td></tr>
+<tr><td>8</td><td>power</td><td>12V</td></tr>
+<tr><td>3, 14</td><td>motor</td><td>motor pin 1</td></tr>
+<tr><td>6, 11</td><td>motor</td><td>motor pin 2</td></tr>
+</table>
   
-3&14      motor pin 1  
-6&11      motor pin 2  
-  
-HARDWARE
+Hardware
 --------
- * Metal Gearmotor 37Dx57L mm with 64 CPR Encoder from www.pololu.com
+ * [Metal Gearmotor 37Dx57L mm with 64 CPR Encoder from Pololu](http://www.pololu.com/catalog/product/1447)
  * Arduino
  * 754410 or L293D
   
-PINS
+Pins
 ----
 Pinout for motor control uses 3 pins for output. It is somewhat wasteful, but had more flexibility. Two pins for direction control, and one for motor power (assuming PWM).
-Be sure to pick a PWM capable pin for pin\_pwm\_output.
+Be sure to pick a PWM capable pin for pin_pwm_output.
 
 The two input pins are for the encoder feedback.
 
