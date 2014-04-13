@@ -27,7 +27,7 @@ Hardware
 --------
  * [Metal Gearmotor 37Dx57L mm with 64 CPR Encoder from Pololu](http://www.pololu.com/catalog/product/1447)
  * Arduino
- * 754410 or L293D
+ * ~~754410 or L293D~~ [MC33926 Motor Driver Carrier](http://www.pololu.com/product/1212)
   
 Pins
 ----
